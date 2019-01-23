@@ -25,12 +25,15 @@ public class Numerology {
 				sum = sum + 8;
 		}
 		int r, result = 0;
-		while(sum > 0)
+		while(sum > 9)
 		{
-			r = sum % 10;
-			result = result + r;
-			sum = sum/10;
-			
+			while(sum > 0)
+			{
+				r = sum % 10;
+				result = result + r;
+				sum = sum/10;
+				
+			}
 		}
 		System.out.println(result);
 		

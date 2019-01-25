@@ -1,41 +1,41 @@
 import java.util.Scanner;
 
-class Tests
-{
-	private String name;
-	private int marks;
-	public void set(String name, int marks)
-	{
-		this.name = name;
-		this.marks = marks;
-	}
-	public void get()
-	{
-		System.out.println(this.name);
-		System.out.println(this.marks);
-	}
-}
-public class AverageMarks {
-
+public class Average {
 	public static void main(String[] args) {
-		Tests [] tests;
-		System.out.println("enter number of students");
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		tests = new Tests[n];
-		for(int i = 0; i < n; i++)
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter no of students");
+		int n=sc.nextInt();
+		System.out.println("Enter name and marks");
+		String[][] arr=new String[n][2];
+		for(int i=0; i<n; i++)
+			for(int j=0; j<2; j++)
+				arr[i][j]=sc.next();
+		int[] name=new int[n];
+		int sum=0,count=0;
+		for(int i=0; i<n; i++)
 		{
-			System.out.println("enter name");
-			String name = sc.next();
-			System.out.println("enter marks");
-			int marks = sc.nextInt();
-			tests[i] = new Tests();
-			tests[i].set(name, marks);
+			sum=0;
+			count=0;
+			for(int j=0; j<n; j++)
+			{
+				if(arr[i][0].equals(arr[j][0]))
+				{
+					sum=sum+Integer.parseInt(arr[j][1]);
+					count++;
+				}
+			}
+			name[i]=(int)Math.floor(sum/count);
 		}
-		for(int i = 0; i < n; i++)
+		int max=name[0];
+		for(int i=0; i<n; i++)
 		{
-			tests[i].get();
+			if(max<name[i])
+			{
+				max=name[i];
+			}
 		}
-	}
 		
+		System.out.println(max);
+	}
+
 }

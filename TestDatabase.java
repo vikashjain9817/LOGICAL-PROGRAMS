@@ -20,7 +20,7 @@ public class TestDatabase{
 	        
 	        
 	        Scanner sc = new Scanner(System.in);
-	       /* System.out.println("enter new name");
+	        System.out.println("enter new name");
 	        String s = sc.next();
 	        System.out.println("enter id where you want to update");
 	        int id = sc.nextInt();
@@ -31,7 +31,7 @@ public class TestDatabase{
 	        	System.out.println(rs1.getInt(1)+"  "+rs1.getString(2)+"  "+rs1.getDate(3)+ " "+rs1.getInt(4)+ " "+rs1.getString(5));  
 	        System.out.println("_______________________________________________________________________");
 	        System.out.println("updated rows are : " + i);
-	        */
+	        
 	        
 	        System.out.println("enter id");
 	        int id1 = sc.nextInt();
